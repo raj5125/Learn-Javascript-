@@ -46,3 +46,13 @@ const myAddress = [
 myAddress.forEach( (add) => {
     console.log(add.state);
 })
+
+// how to return in for each loop
+const newArray = [ 1, 2, 3, 4, 5, 6, ,7, 8, 9, 10]
+const ans = []
+newArray.forEach( (num) => {
+    if(num > 4)
+        ans.push(num)
+})
+
+console.log(ans);
