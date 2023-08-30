@@ -1,5 +1,8 @@
-//for each loop  ---> mostly use this loop
-// syntax variable.foreach(function (arg) {}  )  no name of function is  written only argument can be passed
+/*for each loop  ---> mostly use this loop
+syntax variable.foreach(function (arg) {}  )  
+no name of function is  written only argument can be passed
+here function take call back that's why name is not used
+*/
 
 const coding = ["swift", "java", "cpp", "py", "javascript"]
 coding.forEach(function (lang) {
