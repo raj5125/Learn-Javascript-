@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .bg-color{
+            background-color: black;
+            color: azure;
+        }
+    </style>
+</head>
+<body class="bg-color">
+    <div>
+        <h1 id="title" class="heading"> DOM Learning in Javascript
+            <span style="display: none;">test text</span>
+        </h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+        <input type="password" name="" id="" >
+
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+<!-- browser console DOM practice input and output
+    HTML collection, Array , NodeList are different things
+console.log(documents)
+
+-------------------Dom manipulation --- change in id 
+document.getElementById("title").innerHTML="<h1>Web Development"
+
+INPUT--- document.getElementById("title")  
+OUTPUT-- <h1 id="title" class="heading"> DOM Learning in Javascript</h1>
+
+document.getElementById("title").id
+'title'
+document.getElementById("title").class
+undefined
+document.getElementById("title").className
+'heading'
+document.getElementById("title").getAttribute('id')
+'title'
+document.getElementById("title").setAttribute("class", "test")
+undefined
+
+
+
+---------styling in dom-----------
+const title = document.getElementById("title")
+undefined
+title.sty
+undefined
+title.style.backgroundColor = 'green'
+'green'
+title.style.padding = "15px"
+'15px'
+title.style.borderRadius = "15px"
+'15px'
+ 
+
+
+-----------------3. INTERESTING learning in dom---------- 
+
+title
+<h1 id=​"title" class=​"heading" style=​"background-color:​ green;​ border-radius:​ 15px;​ padding:​ 15px;​">​ DOM Learning in Javascript​</h1>​
+title.textContent
+' DOM Learning in Javascript'
+title.innerHTML
+' DOM Learning in Javascript'
+title.innerText
+'DOM Learning in Javascript'
+
+after adding span in html now show the difference between innerText, textContent and innerHTML
+title.innerText
+'DOM Learning in Javascript'
+title.textContent
+' DOM Learning in Javascript\n            test text\n        '
+title.innerHTML
+' DOM Learning in Javascript\n            <span style="display: none;">test text</span>\n        '
+
+
+-----------querySelector------------
+document.querySelector('h2')
+<h2>​Lorem ipsum dolor sit.​</h2>
+​
+document.querySelector('#title')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('.heading')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+document.querySelector('input[type="password"]')
+<input type=​"password" name id>​
+document.querySelector('p:first-child')
+null
+document.querySelector('ul')
+-->
