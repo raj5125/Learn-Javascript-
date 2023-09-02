@@ -24,9 +24,10 @@
         <input type="password" name="" id="" >
 
         <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
         </ul>
     </div>
 
@@ -104,4 +105,64 @@ document.querySelector('input[type="password"]')
 document.querySelector('p:first-child')
 null
 document.querySelector('ul')
+
+--------------------- single element by query --------------------
+document.querySelector('ul')
+<ul>​…​</ul>​
+const myul = document.querySelector('ul')
+undefined
+myul.querySelector('li')
+<li>​…​</li>​
+const changecolor = myul.querySelector('li')
+undefined
+changecolor.style.backgroundColor = 'green'
+'green'
+changecolor.style.padding = '10px'
+'10px'
+changecolor.innerText
+'one'
+changecolor.innerText = 'five'
+'five'
+
+-------------------NodeList == all query selected ones (No map available in Nodelist)-------------------
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+const tempList = document.querySelectorAll('li')
+undefined
+tempList
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+
+tempList.style.color = 'green'    // wrong way
+VM769:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:22
+(anonymous) @ VM769:1
+
+tempList[0].style.color = 'green'   //correct way
+'green'
+
+//use foreach loop in NodeList
+tempList
+NodeList(3) [li, li, li]
+
+tempList.forEach(function  (l) { } )
+undefined
+tempList.forEach(function  (l) { l.style.backgroundColor = 'green' } )
+undefined
+
+
+-------------------HTMLCollection------------------
+document.getElementsByClassName('list-item')
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+
+//convert HTMLCollection to array for accessing more methods
+
+const tempList = document.getElementsByClassName('list-item')
+undefined
+const myconvertedArray = Array.from(tempList)
+undefined
+myconvertedArray.forEach(function name(li) {
+    li.style.color = 'orange'
+})
+undefined
 -->

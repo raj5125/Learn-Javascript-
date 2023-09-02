@@ -15,6 +15,24 @@
 </body>
 
 <script>
-    
+    const parent= document.querySelector('.parent')
+    console.log(parent)
+    console.log(parent.children);    // access all child (HTMLCollection)
+    console.log(parent.children[1].innerHTML);  //access single child and innerHTMl used for only gives text as output not any tags or any other which are use
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = "orange"   //style each child
+    console.log(parent.firstElementChild);  // return first child element with all html
+    console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);   //first day
+    console.log(dayOne.parentElement);   //parentelement is used to access parent from child
+    console.log(dayOne.nextElementSibling);  //next sibling of child like here tuesday
+
+    console.log("NODES: ", parent.childNodes);   //childNodes gives NodeList(9) here output
 </script>
 </html>
