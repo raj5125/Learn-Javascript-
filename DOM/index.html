@@ -38,12 +38,14 @@
     HTML collection, Array , NodeList are different things
 console.log(documents)
 
--------------------Dom manipulation --- change in id 
+-------------------Dom manipulation --- change in id or change its values
+getelemenById is used to take element/tag(containg that id) from the webpage whose id is in the parameter
 document.getElementById("title").innerHTML="<h1>Web Development"
 
 INPUT--- document.getElementById("title")  
 OUTPUT-- <h1 id="title" class="heading"> DOM Learning in Javascript</h1>
 
+also done by using className and class not because behind the scene it does not understands class
 document.getElementById("title").id
 'title'
 document.getElementById("title").class
@@ -52,7 +54,8 @@ document.getElementById("title").className
 'heading'
 document.getElementById("title").getAttribute('id')
 'title'
-document.getElementById("title").setAttribute("class", "test")
+---------////setAttribute is used for setting test in the class and now it is overwrite so here test heading is set
+document.getElementById("title").setAttribute("class", "test heading")
 undefined
 
 
@@ -72,14 +75,14 @@ title.style.borderRadius = "15px"
 
 
 -----------------3. INTERESTING learning in dom---------- 
-
+add content
 title
 <h1 id=​"title" class=​"heading" style=​"background-color:​ green;​ border-radius:​ 15px;​ padding:​ 15px;​">​ DOM Learning in Javascript​</h1>​
-title.textContent
+title.textContent               --gives full content even it is not displayed by using some property
 ' DOM Learning in Javascript'
-title.innerHTML
+title.innerHTML                 --gives content as well as html content     
 ' DOM Learning in Javascript'
-title.innerText
+title.innerText                 --gives displayed content of webpage
 'DOM Learning in Javascript'
 
 after adding span in html now show the difference between innerText, textContent and innerHTML
@@ -91,7 +94,9 @@ title.innerHTML
 ' DOM Learning in Javascript\n            <span style="display: none;">test text</span>\n        '
 
 
------------querySelector------------
+-----------querySelector------------ 
+select and returns the first element that matches the specified selectors
+
 document.querySelector('h2')
 <h2>​Lorem ipsum dolor sit.​</h2>
 ​
@@ -107,6 +112,7 @@ null
 document.querySelector('ul')
 
 --------------------- single element by query --------------------
+first select ul tag by hold that tag into a variable by using queryselector to access it.
 document.querySelector('ul')
 <ul>​…​</ul>​
 const myul = document.querySelector('ul')
