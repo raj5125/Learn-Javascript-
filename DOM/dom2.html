@@ -26,6 +26,7 @@
     console.log(parent.children);    // access all child (HTMLCollection)
     console.log(parent.children[1].innerHTML);  //access single child and innerHTMl used for only gives text as output not any tags or any other which are use
 
+    // here parent.children used as array as it is a HTMLcollection so it acts as array
     for (let i = 0; i < parent.children.length; i++) {
         console.log(parent.children[i].innerHTML);
     }
@@ -39,6 +40,6 @@
     console.log(dayOne.parentElement);   //parentelement is used to access parent from child
     console.log(dayOne.nextElementSibling);  //next sibling of child like here tuesday
 
-    console.log("NODES: ", parent.childNodes);   //childNodes gives NodeList(9) here output
+    console.log("NODES: ", parent.childNodes);   //childNodes gives NodeList(9) here output means how many times text, comment, div, enter, etc comes  
 </script>
 </html>
