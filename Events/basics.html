@@ -19,8 +19,59 @@
    </div>
 </body>
 <script>
-    document.getElementById('owl').onclick = function(){
-        alert("owl clicked")
-    }
+    // 1st Approach
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+    //2nd approach
+    // Eventlistener is used to that listen the events like click , double click , keyboartd press 
+    // in event listener there are three parameters in which third parameter is by default false and also true is used 
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     alert("owl clicked again")
+    // })  
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e);
+    // },false)
+    // Event propagation means first bubbling up event in which it go niche se upr like (li to ul) and caputuing event if true is used then it became opposite like top to down
+    // 
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    },false)
+    
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");   
+    },false)
+    
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();     // preventDefault is used here to prevent their default function to do like here link of google is opened by clicking which is stopped by using this
+        e.stopPropagation();    // it is used for stopping the bubbling of event only the required event is propagated not the others
+        console.log("google clicked");   
+    },false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);      // target is used to go to the target(like here image) but for selecting the bullet points--> parentNode is used to return the whole tag(li) 
+        let removeIt = e.target.parentNode;
+        removeIt.remove()               //   remove is used for deleting the image like here
+        // removeIt.parentNode.removeChild(removeIt) //here removeIt first gives li then parentNode is used for go to ul tag then removeChild is used for deleting the removeIt wala child
+    })
+
+    
+     /*   console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }*/
+    
 </script>
 </html>
