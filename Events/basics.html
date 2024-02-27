@@ -42,7 +42,7 @@
     // document.getElementById('owl').addEventListener('click', function(e){
     //     console.log(e);
     // },false)
-    // Event propagation means first bubbling up event in which it go niche se upr like (li to ul) and caputuing event if true is used then it became opposite like top to down
+    // Event propagation means first bubbling up event in which it go niche se upr like (li to ul) and capturing event if true is used then it became opposite like top to down
     // 
     document.getElementById('images').addEventListener('click', function(e){
         console.log("clicked inside the ul");
@@ -58,20 +58,21 @@
         console.log("google clicked");   
     },false)
 
-    document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target.parentNode);      // target is used to go to the target(like here image) but for selecting the bullet points--> parentNode is used to return the whole tag(li) 
-        let removeIt = e.target.parentNode;
-        removeIt.remove()               //   remove is used for deleting the image like here
+        // document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);      // target is used to go to the target(like here image) but for selecting the bullet points--> parentNode is used to return the whole tag(li) 
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove()               //   remove is used for deleting the image like here
         // removeIt.parentNode.removeChild(removeIt) //here removeIt first gives li then parentNode is used for go to ul tag then removeChild is used for deleting the removeIt wala child
-    })
+        // In the above code problem is that when we click the list dots then all images are deleted but we want that no it does not delete anything 
 
-    
-     /*   console.log(e.target.tagName);
-        if (e.target.tagName === 'IMG') {
+        document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {          //restrict check 
             console.log(e.target.id);
             let removeIt = e.target.parentNode
-            removeIt.remove()
-        }*/
+            removeIt.remove();
+        }
+    })
     
 </script>
 </html>
