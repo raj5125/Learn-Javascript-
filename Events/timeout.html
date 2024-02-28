@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You Know Javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayBye = function(){
+        console.log("Bye");
+    }
+    // 1st way
+    // setTimeout(function(){
+    //     document.querySelector('h1').innerHTML= "Yes I know JS"
+    // }, 2000 )
+
+    // 2nd way
+    const changeText= function(){
+        document.querySelector('h1').innerHTML= "Yes I know JS"
+    } 
+    const changeMe = setTimeout(changeText, 2000)   // after 2 sec text change and changetext reference passed
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+</script>
+</html>

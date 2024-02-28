@@ -1,0 +1,31 @@
+<!-- This program is used to start and end the program by clicking start button it print the name and date 
+after that stop the program by clicking the stop button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You Know Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate=function(str){
+        console.log(str, Date.now());
+    }
+    let intervalId;
+    document.querySelector('#start').addEventListener('click', function(){
+        console.log("START")
+        intervalId = setInterval(sayDate, 1000, "Raj")
+    })
+    // const intervalId= setInterval(sayDate, 1000, "hi");
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+        console.log("STOPPED")
+    })
+    // clearInterval(intervalId)
+</script>
+</html>
