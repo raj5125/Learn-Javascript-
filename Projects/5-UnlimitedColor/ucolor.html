@@ -1,0 +1,43 @@
+<!-- This program is used to start and end the program by clicking start button it print the name and date 
+after that stop the program by clicking the stop button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Start should change the background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const randomcolor=function(){
+        const hex= '0123456789ABCDEF';            //here hex code is used and loop run till 6 as we know that color is made by #FFFFFF #+6letters or numbers
+        let color = '#';
+        for(let i=0; i<6; i++)
+        {
+            color +=hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+    const changeColor = function(){
+        document.body.style.backgroundColor = randomcolor();
+    }
+    let intervalId;
+    document.querySelector('#start').addEventListener('click', function(){
+        console.log("START")
+        // document.body.style.backgroundColor = randomcolor();
+        if(!intervalId)               // here safety check is done ki agr intervalId hai hi ni to means it should be null 
+        intervalId = setInterval(changeColor, 1000)
+    })
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+        console.log("STOPPED")
+        intervalId = null;         // in program when we click start more than one time before stopping then for the working of the stop button intervalId must  be null
+    })
+
+</script>
+</html>
