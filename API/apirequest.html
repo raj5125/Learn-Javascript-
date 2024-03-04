@@ -14,23 +14,30 @@
           3	        LOADING	             Downloading; responseText holds partial data.
           4	        DONE	             The operation is complete.
      -->
+     <button id="check">Click to check</button>
 </body>
 <script>
     // first make xmlhttprequest XMLHttpRequest (XHR) objects are used to interact with servers. 
     //    You can retrieve data from a URL without having to do a full page refresh. 
     // This enables a Web page to update just part of a page without disrupting what the user is doing.
     const requestURL= "https://api.github.com/users/hiteshchoudhary"
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();    // first xhr as object made then access of server done using this
     xhr.open('GET', requestURL)
-    xhr.onreadystatechange= function(){
+    xhr.onreadystatechange= function(){       // (track the request) use for changing the state continuosly
         console.log(xhr.readyState);
         if(xhr.readyState === 4)
         {
-            const data = JSON.parse(this.responseText);
+            const data = JSON.parse(this.responseText);   // responseText is used to return all details from the url in the string type 
+                //    parse is used to convert the string into JSON
             console.log(typeof data);
-            console.log(data.followers);
+            document.querySelector('#check').addEventListener('click', function (e) {
+                console.log(data.avatar_url);
+                console.log(data.name);
+                console.log(data.followers);
+            })
+
         }
     }
-    xhr.send();
+    xhr.send();            // it is used to call open
 </script>
 </html>
